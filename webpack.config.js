@@ -5,7 +5,7 @@ module.exports = {
   entry: './addtopage.js',
   output: {
     path: path.resolve('./dist'),
-    filename: 'addtopage.min.js'
+    filename: 'addtopage.bundle.js'
   },
 
   module: {
