@@ -5,6 +5,7 @@
   "main": "dist/addtopage.bundle.js",
   "scripts": {
     "build": "BABEL_ENV=production NODE_ENV=production webpack -p",
+    "lint": "eslint src/ test/ --ignore-pattern test/helpers/",
     "start": "webpack -p --watch",
     "test": "nyc ava"
   },
