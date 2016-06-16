@@ -1,15 +1,26 @@
 import test from 'ava'
-import { createImageTag, createScriptTag } from '../src/addtopage'
+import { addtopage, createImageTag, createScriptTag } from '../src/addtopage'
 
-test('Create a new image element', t => {
-  const testSrc = 'junk-here'
-  const newElement = createImageTag(testSrc)
+/*
+ * I can add images
+ */
+test.todo('Creates a new image element, inferring from file extension (png, jpg, tiff, svg, etc.)')
+test.todo('Creates a new image element using data URI, inferring from file extension')
+test.todo('Creates a new image element without inferring from file extension')
+test.todo('Creates a new image element using data URI without inferring from file extension')
 
-  t.true(newElement.nodeName === 'IMAGE' && newElement.src === testSrc)
-})
+/*
+ * I can add scripts
+ */
+test.todo('Creates a new script element when given, inferring from file extension')
+test.todo('Creates a new inline script element when given, inferring from file extension')
+test.todo('Creates a new script element when given without inferring from file extension')
+test.todo('Creates a new inline script element when given without inferring from file extension')
 
-test('Create a new script element', t => {
-  const testSrc = 'junk-here'
-  const newElement = createScriptTag('junk-here')
-  t.true(newElement.nodeName === 'SCRIPT' && newElement.src === testSrc)
-})
+/*
+ * I can add styles
+ */
+test.todo('Creates a new style link element when given, inferring from file extension')
+test.todo('Creates a new inline style element when given, inferring from file extension')
+test.todo('Creates a new style link when given without inferring from file extension')
+test.todo('Creates a new inline style element when given without inferring from file extension')
