@@ -124,7 +124,8 @@ test('Creates a new style link element, inferring from file extension', t => {
 
   // test if the element is an script element and has the correct source
   t.is(newElement.nodeName, 'LINK')
-  t.is(newElement.src, testSrc)
+  t.is(newElement.href, testSrc)
+  t.is(newElement.rel.toLowercase(), 'stylesheet')
 })
 
 test('Creates a new style link without inferring from file extension', t => {
@@ -134,7 +135,19 @@ test('Creates a new style link without inferring from file extension', t => {
 
   // test if the element is an script element and has the correct source
   t.is(newElement.nodeName, 'LINK')
-  t.is(newElement.src, testSrc)
+  t.is(newElement.href, testSrc)
+  t.is(newElement.rel.toLowercase(), 'stylesheet')
+})
+
+test('Creates a new style link without inferring from file extension, using type: "style"', t => {
+  const testSrc = 'http://localhost:3333/style.bogus-extension'
+  const newElement = addtopage(testSrc, { type: 'style' })
+  if (!newElement) t.fail('Did not create an element!')
+
+  // test if the element is an script element and has the correct source
+  t.is(newElement.nodeName, 'LINK')
+  t.is(newElement.href, testSrc)
+  t.is(newElement.rel.toLowercase(), 'stylesheet')
 })
 
 test('Creates a new inline style element, inferring from file extension', async t => {
