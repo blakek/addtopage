@@ -1,7 +1,8 @@
+import express from 'express'
+
 let server
 
 export function start(port = 3333) {
-  const express = require('express')
   const app = express()
 
   app.use(express.static('helpers/file-server/files'))
