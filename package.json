@@ -7,7 +7,8 @@
     "build": "BABEL_ENV=production NODE_ENV=production webpack -p",
     "lint": "eslint src/ test/ --ignore-pattern test/helpers/",
     "start": "webpack -p --watch",
-    "test": "nyc ava"
+    "test": "nyc ava",
+    "watch": "ava --watch"
   },
   "author": "Blake Knight <bknight@gsandf.com> (http://blakek.me/)",
   "license": "MIT",
