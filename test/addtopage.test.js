@@ -1,18 +1,11 @@
 import test from 'ava'
 import staticServer from './helpers/file-server'
+import { rasterImageExtensions } from './helpers/file-extensions'
 import { addtopage } from '../src/addtopage'
 
 /*
  * I can add images
  */
-const rasterImageExtensions = [
-  'gif',
-  'jpeg',
-  'jpg',
-  'png',
-  'tif',
-  'tiff'
-]
 test.before(() => staticServer.start())
 test.after.always(() => staticServer.close())
 
