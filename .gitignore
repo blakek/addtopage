@@ -1,6 +1,9 @@
 # Compiled/built project
 dist
 
+# Testing output
+.nyc_output
+
 # Logs
 logs
 *.log

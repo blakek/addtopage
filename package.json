@@ -4,9 +4,9 @@
   "description": "add content to your page - how you want - using JavaScript",
   "main": "dist/addtopage.bundle.js",
   "scripts": {
-    "build": "webpack -p",
+    "build": "BABEL_ENV=production NODE_ENV=production webpack -p",
     "start": "webpack -p --watch",
-    "test": "ava"
+    "test": "nyc ava"
   },
   "author": "Blake Knight <bknight@gsandf.com> (http://blakek.me/)",
   "license": "MIT",
@@ -15,7 +15,28 @@
     "babel-core": "^6.9.1",
     "babel-loader": "^6.2.4",
     "babel-preset-es2015": "^6.9.0",
+    "jsdom": "^9.2.1",
     "nyc": "^6.6.1",
     "webpack": "^1.13.1"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ],
+    "plugins": [
+      "transform-runtime"
+    ],
+    "ignore": "test/",
+    "env": {
+      "development": {
+        "sourceMaps": "inline"
+      }
+    }
+  },
+  "ava": {
+    "require": [
+      "babel-core/register",
+      "./test/helpers/setup-browser-env.js"
+    ]
   }
 }
