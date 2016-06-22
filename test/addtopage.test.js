@@ -13,7 +13,7 @@ test.after.always(() => staticServer.close())
 test('Creates a new image element, inferring from file extension (raster files)', t => {
   t.plan(rasterImageExtensions.length * 2)
   const testImages = rasterImageExtensions.map(ext => `http://localhost:3333/image.${ext}`)
-  const newElements = testImages.forEach(img => addtopage(img))
+  const newElements = testImages.map(img => addtopage(img))
 
   if (!newElements) t.fail('Did not create any elements!')
 
@@ -36,7 +36,7 @@ test('Creates a new image element, inferring from file extension (SVG)', t => {
 
 test('Creates a new image element using data URI, inferring from file extension', t => {
   const testImages = rasterImageExtensions.map(ext => `http://localhost:3333/image.${ext}`)
-  const newElements = testImages.forEach(img => addtopage(img, { inline: true }))
+  const newElements = testImages.map(img => addtopage(img, { inline: true }))
 
   if (!newElements) t.fail('Did not create any elements!')
 
