@@ -22,7 +22,7 @@ const knownElementTypes = [
   'style'
 ]
 
-export function addtopage(resource, { type = undefined } = {}) {
+export function addtopage(resource, { inline = false, type = undefined } = {}) {
   // If not given a type, try to infer it from the file name (esp. the file extension)
   if (!type) {
     const testType = elementTypeTest.find(elementType => elementType.test(resource))
@@ -34,6 +34,13 @@ export function addtopage(resource, { type = undefined } = {}) {
     type = testType.element
   }
 
+  // Correct style and link tags when necessary
+  if (!inline && type === 'style') {
+    type = 'link'
+  } else if (inline && type === 'link') {
+    type = 'style'
+  }
+
   // Ensure we are only working with an element we know
   if (!knownElementTypes.includes(type)) {
     return
@@ -41,7 +48,17 @@ export function addtopage(resource, { type = undefined } = {}) {
 
   // Create the element
   var newElement = document.createElement(type)
-  newElement.src = resource
+
+  if (!inline && type !== 'link') {
+    newElement.src = resource
+  } else if (type === 'link') {
+    newElement.href = resource
+    newElement.rel = 'stylesheet'
+  } else {
+    // TODO: write logic for inlining resource contents
+    return
+  }
+
   return newElement
 }
 

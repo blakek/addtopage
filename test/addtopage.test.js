@@ -125,7 +125,7 @@ test('Creates a new style link element, inferring from file extension', t => {
   // test if the element is an script element and has the correct source
   t.is(newElement.nodeName, 'LINK')
   t.is(newElement.href, testSrc)
-  t.is(newElement.rel.toLowercase(), 'stylesheet')
+  t.is(newElement.rel.toLowerCase(), 'stylesheet')
 })
 
 test('Creates a new style link without inferring from file extension', t => {
@@ -136,7 +136,7 @@ test('Creates a new style link without inferring from file extension', t => {
   // test if the element is an script element and has the correct source
   t.is(newElement.nodeName, 'LINK')
   t.is(newElement.href, testSrc)
-  t.is(newElement.rel.toLowercase(), 'stylesheet')
+  t.is(newElement.rel.toLowerCase(), 'stylesheet')
 })
 
 test('Creates a new style link without inferring from file extension, using type: "style"', t => {
@@ -147,7 +147,7 @@ test('Creates a new style link without inferring from file extension, using type
   // test if the element is an script element and has the correct source
   t.is(newElement.nodeName, 'LINK')
   t.is(newElement.href, testSrc)
-  t.is(newElement.rel.toLowercase(), 'stylesheet')
+  t.is(newElement.rel.toLowerCase(), 'stylesheet')
 })
 
 test('Creates a new inline style element, inferring from file extension', async t => {
