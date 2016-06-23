@@ -22,7 +22,7 @@ const knownElementTypes = [
   'style'
 ]
 
-export function addtopage(resource, { inline = false, type = undefined } = {}) {
+function addtopage(resource, { inline = false, type = undefined } = {}) {
   // If not given a type, try to infer it from the file name (esp. the file extension)
   if (!type) {
     const testType = elementTypeTest.find(elementType => elementType.test(resource))
