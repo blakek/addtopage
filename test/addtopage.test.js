@@ -2,7 +2,7 @@ import test from 'ava'
 import staticServer from './helpers/file-server'
 import axios from 'axios'
 import { rasterImageExtensions } from './helpers/file-extensions'
-import { addtopage } from '../src/addtopage'
+import addtopage from '../src/addtopage'
 
 /*
  * I can add images

@@ -59,7 +59,7 @@ function addtopage(resource, { inline = false, type = undefined } = {}) {
     return
   }
 
-  return newElement
+  return document.body.appendChild(newElement)
 }
 
 export default addtopage
