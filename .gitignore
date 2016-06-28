@@ -3,6 +3,7 @@ dist
 
 # Testing output
 .nyc_output
+coverage
 
 # Logs
 logs

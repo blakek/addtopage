@@ -6,6 +6,7 @@
   "scripts": {
     "build": "BABEL_ENV=production NODE_ENV=production webpack -p",
     "lint": "eslint src/ test/ --ignore-pattern test/helpers/",
+    "report": "nyc report --reporter=html",
     "start": "webpack -p --watch",
     "test": "nyc ava",
     "watch": "ava --watch"
