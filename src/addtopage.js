@@ -16,6 +16,7 @@ const elementTypeTest = [
 
 // All element types we know
 const knownElementTypes = [
+  'iframe',
   'image',
   'link',
   'script',

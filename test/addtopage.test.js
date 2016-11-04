@@ -171,3 +171,17 @@ test.skip('Creates a new inline style element without inferring from file extens
   t.is(newElement.nodeName, 'STYLE')
   t.is(newElement.innerHTML, fileContents)
 })
+
+/*
+ * I can add iframes
+ */
+test('Creates a new iframe with a given src', t => {
+  const iframeSrc = 'https://www.youtube.com/embed/C0DPdy98e4c'
+  const newElement = addtopage(iframeSrc, { type: 'iframe' })
+
+  if (!newElement) t.fail('Did not create any elements!')
+
+  // test if the element is an iframe and has the correct source
+  t.is(newElement.nodeName, 'IFRAME')
+  t.is(newElement.src, iframeSrc)
+})
