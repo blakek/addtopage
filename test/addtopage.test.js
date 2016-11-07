@@ -185,3 +185,22 @@ test('Creates a new iframe with a given src', t => {
   t.is(newElement.nodeName, 'IFRAME')
   t.is(newElement.src, iframeSrc)
 })
+
+/*
+ * Throws errors properly
+ */
+test('Throws an error when trying to add an unknown element', t => {
+  const error = t.throws(() => {
+    addtopage('garbage', { type: 'garbage' })
+  })
+
+  t.is(error.message, 'Cannot create element of unknown type: garbage')
+})
+
+test('Throws an error when trying to add an unknown element', t => {
+  const error = t.throws(() => {
+    addtopage('test.garbage')
+  })
+
+  t.is(error.message, 'Cannot guess element needed for unknown file type: test.garbage')
+})
