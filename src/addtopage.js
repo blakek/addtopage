@@ -29,7 +29,7 @@ function addtopage(resource, { inline = false, type = undefined } = {}) {
     const testType = elementTypeTest.find(elementType => elementType.test(resource))
 
     if (!testType) {
-      return
+      throw new Error(`Cannot guess element needed for unknown file type: ${resource}`)
     }
 
     type = testType.element
@@ -44,7 +44,7 @@ function addtopage(resource, { inline = false, type = undefined } = {}) {
 
   // Ensure we are only working with an element we know
   if (!knownElementTypes.includes(type)) {
-    return
+    throw new Error(`Cannot create element of unknown type: ${type}`)
   }
 
   // Create the element
@@ -57,7 +57,7 @@ function addtopage(resource, { inline = false, type = undefined } = {}) {
     newElement.rel = 'stylesheet'
   } else {
     // TODO: write logic for inlining resource contents
-    return
+    throw new Error('Creating inline resources is not yet implemented')
   }
 
   return document.body.appendChild(newElement)
