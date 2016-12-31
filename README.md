@@ -1,4 +1,4 @@
-# addtopage
+# addtopage [![Travis](https://img.shields.io/travis/blakek/addtopage.svg)](https://travis-ci.org/blakek/addtopage)
 
 > a tiny resource injector
 
