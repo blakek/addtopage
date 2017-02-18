@@ -14,7 +14,7 @@
   "author": "Blake Knight <bknight@gsandf.com> (http://blakek.me/)",
   "license": "MIT",
   "devDependencies": {
-    "ava": "^0.17.0",
+    "ava": "^0.18.2",
     "axios": "^0.15.2",
     "babel-core": "^6.24.0",
     "babel-eslint": "^7.1.0",
