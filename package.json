@@ -1,6 +1,6 @@
 {
   "name": "addtopage",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "add content to your page - how you want - using JavaScript",
   "main": "dist/addtopage.bundle.js",
   "scripts": {
