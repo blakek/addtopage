@@ -67,7 +67,6 @@ test.skip('Creates a new image element using data URI without inferring from fil
   t.true(newElement.src.includes('data:'))
 })
 
-
 /*
  * I can add scripts
  */
@@ -112,7 +111,6 @@ test.skip('Creates a new inline script element without inferring from file exten
   t.is(newElement.nodeName, 'SCRIPT')
   t.is(newElement.innerHTML, scriptContents)
 })
-
 
 /*
  * I can add styles

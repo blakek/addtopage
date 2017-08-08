@@ -1,6 +1,1 @@
-export const rasterImageExtensions = [
-  'gif',
-  'jpeg',
-  'jpg',
-  'png'
-]
+export const rasterImageExtensions = ['gif', 'jpeg', 'jpg', 'png']

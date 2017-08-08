@@ -2,26 +2,20 @@
 const elementTypeTest = [
   {
     element: 'image',
-    test: (filename) => /\.(gif|jp[e]?g|png|svg)$/.test(filename)
+    test: filename => /\.(gif|jp[e]?g|png|svg)$/.test(filename)
   },
   {
     element: 'script',
-    test: (filename) => /js[x]?$/.test(filename)
+    test: filename => /js[x]?$/.test(filename)
   },
   {
     element: 'style',
-    test: (filename) => /css$/.test(filename)
+    test: filename => /css$/.test(filename)
   }
 ]
 
 // All element types we know
-const knownElementTypes = [
-  'iframe',
-  'image',
-  'link',
-  'script',
-  'style'
-]
+const knownElementTypes = ['iframe', 'image', 'link', 'script', 'style']
 
 function addtopage(resource, { inline = false, type = undefined } = {}) {
   // If not given a type, try to infer it from the file name (esp. the file extension)
@@ -48,7 +42,7 @@ function addtopage(resource, { inline = false, type = undefined } = {}) {
   }
 
   // Create the element
-  var newElement = document.createElement(type)
+  const newElement = document.createElement(type)
 
   if (!inline && type !== 'link') {
     newElement.src = resource

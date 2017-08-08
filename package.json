@@ -5,7 +5,7 @@
   "main": "dist/addtopage.bundle.js",
   "scripts": {
     "build": "BABEL_ENV=production NODE_ENV=production webpack -p",
-    "lint": "eslint src/ test/ --ignore-pattern test/helpers/",
+    "lint": "eslint src/ test/ --ignore-pattern test/helpers/file-server",
     "report": "nyc report --reporter=html",
     "start": "webpack -p --watch",
     "test": "nyc ava",
@@ -13,6 +13,25 @@
   },
   "author": "Blake Knight <bknight@gsandf.com> (http://blakek.me/)",
   "license": "MIT",
+  "ava": {
+    "require": ["babel-core/register", "./test/helpers/setup-browser-env.js"]
+  },
+  "babel": {
+    "presets": ["es2015"],
+    "plugins": ["transform-runtime"],
+    "ignore": "test/*.js",
+    "env": {
+      "development": {
+        "sourceMaps": "inline"
+      }
+    }
+  },
+  "eslintConfig": {
+    "extends": "better-standard",
+    "rules": {
+      "max-len": ["error", { "code": 120 }]
+    }
+  },
   "devDependencies": {
     "ava": "^0.20.0",
     "axios": "^0.16.0",
@@ -23,29 +42,10 @@
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-es2015": "^6.22.0",
     "eslint": "^4.1.0",
+    "eslint-config-better-standard": "^0.0.1",
     "express": "^4.14.0",
     "jsdom": "^9.2.1",
     "nyc": "^11.0.2",
     "webpack": "^1.13.1"
-  },
-  "babel": {
-    "presets": [
-      "es2015"
-    ],
-    "plugins": [
-      "transform-runtime"
-    ],
-    "ignore": "test/*.js",
-    "env": {
-      "development": {
-        "sourceMaps": "inline"
-      }
-    }
-  },
-  "ava": {
-    "require": [
-      "babel-core/register",
-      "./test/helpers/setup-browser-env.js"
-    ]
   }
 }
