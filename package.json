@@ -1,6 +1,6 @@
 {
   "name": "addtopage",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "add content to your page - how you want - using JavaScript",
   "main": "dist/addtopage.bundle.js",
   "scripts": {
@@ -14,11 +14,18 @@
   "author": "Blake Knight <bknight@gsandf.com> (http://blakek.me/)",
   "license": "MIT",
   "ava": {
-    "require": ["babel-core/register", "./test/helpers/setup-browser-env.js"]
+    "require": [
+      "babel-core/register",
+      "./test/helpers/setup-browser-env.js"
+    ]
   },
   "babel": {
-    "presets": ["es2015"],
-    "plugins": ["transform-runtime"],
+    "presets": [
+      "es2015"
+    ],
+    "plugins": [
+      "transform-runtime"
+    ],
     "ignore": "test/*.js",
     "env": {
       "development": {
@@ -29,7 +36,12 @@
   "eslintConfig": {
     "extends": "better-standard",
     "rules": {
-      "max-len": ["error", { "code": 120 }]
+      "max-len": [
+        "error",
+        {
+          "code": 120
+        }
+      ]
     }
   },
   "devDependencies": {
