@@ -6,6 +6,7 @@
   "scripts": {
     "build": "BABEL_ENV=production NODE_ENV=production webpack -p",
     "lint": "eslint src/ test/ --ignore-pattern test/helpers/file-server",
+    "prepublish": "yarn build",
     "report": "nyc report --reporter=html",
     "start": "webpack -p --watch",
     "test": "nyc ava",
@@ -14,18 +15,11 @@
   "author": "Blake Knight <bknight@gsandf.com> (http://blakek.me/)",
   "license": "MIT",
   "ava": {
-    "require": [
-      "babel-core/register",
-      "./test/helpers/setup-browser-env.js"
-    ]
+    "require": ["babel-core/register", "./test/helpers/setup-browser-env.js"]
   },
   "babel": {
-    "presets": [
-      "es2015"
-    ],
-    "plugins": [
-      "transform-runtime"
-    ],
+    "presets": ["es2015"],
+    "plugins": ["transform-runtime"],
     "ignore": "test/*.js",
     "env": {
       "development": {
