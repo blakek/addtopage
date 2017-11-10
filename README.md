@@ -1,7 +1,11 @@
-# addtopage [![Travis](https://img.shields.io/travis/blakek/addtopage.svg)](https://travis-ci.org/blakek/addtopage)
+# addtopage
 
 > a tiny resource injector
 
+[![Travis](https://img.shields.io/travis/blakek/addtopage.svg)](https://travis-ci.org/blakek/addtopage)
+[![Dependencies](https://img.shields.io/david/blakek/addtopage.svg)](https://www.npmjs.com/package/addtopage)
+![MIT Licensed](https://img.shields.io/npm/l/addtopage.svg)
+[![Version](https://img.shields.io/npm/v/addtopage.svg)](https://www.npmjs.com/package/addtopage)
 
 ## What's it do?
 
